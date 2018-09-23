@@ -1,6 +1,6 @@
 # Smart Mirror
 
-[![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE.md)
+[![License](http://img.shields.io/badge/Licence-MIT-brightgreen.svg)](LICENSE)
 
 # Introduction
 
