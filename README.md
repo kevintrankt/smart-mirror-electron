@@ -16,13 +16,7 @@ Clone this repository locally and install dependencies with npm :
 
 ```bash
 git clone https://github.com/kevintrankt/smart-mirror-electron.git
-```
-
-```bash
 cd smart-mirror-electron
-```
-
-```bash
 npm install
 ```
 
