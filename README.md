@@ -17,6 +17,7 @@ Clone this repository locally and install dependencies with npm :
 ```bash
 git clone https://github.com/kevintrankt/smart-mirror-electron.git
 cd smart-mirror-electron
+npm install -g @angular/cli
 npm install
 ```
 
