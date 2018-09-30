@@ -21,6 +21,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { WidgetTemplateComponent } from './widget-template/widget-template.component';
 import { AngularDraggableModule } from 'angular2-draggable';
+import { NewsComponent } from './news/news.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -32,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HomeComponent,
     WebviewDirective,
-    WidgetTemplateComponent
+    WidgetTemplateComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
