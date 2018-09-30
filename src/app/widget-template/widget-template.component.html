@@ -1,4 +1,6 @@
 <div ngDraggable ngResizable class="widget-body">
-  <div>{{hours}}:{{minutes}} {{period}}</div>
-  <div>{{formattedDate}}</div>
+  <div class="time">{{hours}}:{{minutes}}
+    <span class="period">{{period}}</span>
+  </div>
+  <div class="date">{{weekDay}}, {{month}} {{day}}</div>
 </div>

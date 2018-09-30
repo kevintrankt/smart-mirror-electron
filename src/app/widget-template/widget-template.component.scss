@@ -1,8 +1,21 @@
 .widget-body {
   font-family: 'Roboto', sans-serif;
-  width: 25vw;
+  width: auto;
 }
 
 .ng-resizable-diagonal {
   width: unset;
+}
+
+.time {
+  font-size: 4em;
+}
+
+.period {
+  font-size: 0.5em;
+  margin: 0;
+}
+
+.date {
+  margin-left: 15px;
 }
