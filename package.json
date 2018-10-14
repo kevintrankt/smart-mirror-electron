@@ -43,7 +43,9 @@
     "angular2-draggable": "^2.1.4",
     "angularx-flatpickr": "^6.1.0",
     "date-fns": "^1.29.0",
-    "flatpickr": "^4.5.2"
+    "flatpickr": "^4.5.2",
+    "fullcalendar": "^3.6.1",
+    "ng-fullcalendar": "^1.6.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.6.3",

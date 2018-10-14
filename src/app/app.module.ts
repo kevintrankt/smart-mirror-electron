@@ -22,15 +22,11 @@ import { HomeComponent } from './components/home/home.component';
 import { WidgetTemplateComponent } from './widget-template/widget-template.component';
 import { AngularDraggableModule } from 'angular2-draggable';
 import { NewsComponent } from './news/news.component';
+import { CalComponent } from './cal/cal.component';
+
+import { FullCalendarModule } from 'ng-fullcalendar';
 
 // Calendar
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { CalendarComponent } from './calendar/calendar.component';
-import { CommonModule } from '@angular/common';
-import { FlatpickrModule } from 'angularx-flatpickr';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -44,17 +40,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     WebviewDirective,
     WidgetTemplateComponent,
     NewsComponent,
-    CalendarComponent
+    CalComponent
   ],
   imports: [
-    CommonModule,
-    FlatpickrModule.forRoot(),
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory
-    }),
     BrowserModule,
-    BrowserAnimationsModule,
+    FullCalendarModule,
     FormsModule,
     HttpClientModule,
     AngularDraggableModule,
