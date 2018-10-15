@@ -25,6 +25,7 @@ import { NewsComponent } from './news/news.component';
 import { CalComponent } from './cal/cal.component';
 
 import { FullCalendarModule } from 'ng-fullcalendar';
+import { WeatherComponent } from './weather/weather.component';
 
 // Calendar
 
@@ -40,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WebviewDirective,
     WidgetTemplateComponent,
     NewsComponent,
-    CalComponent
+    CalComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,
