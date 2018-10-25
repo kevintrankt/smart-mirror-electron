@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CalendarComponent } from 'ng-fullcalendar';
-import { Options } from 'fullcalendar';
+// import { Options } from 'fullcalendar';
 
 @Component({
   selector: 'app-cal',
@@ -8,21 +8,21 @@ import { Options } from 'fullcalendar';
   styleUrls: ['./cal.component.scss']
 })
 export class CalComponent implements OnInit {
-  calendarOptions: Options;
-  data;
-  @ViewChild(CalendarComponent)
-  ucCalendar: CalendarComponent;
+  // calendarOptions: Options;
+  // data;
+  // @ViewChild(CalendarComponent)
+  // ucCalendar: CalendarComponent;
   constructor() {}
   ngOnInit() {
-    this.calendarOptions = {
-      defaultView: 'listWeek',
-      editable: false,
-      header: {
-        left: '',
-        center: 'title',
-        right: ''
-      },
-      events: this.data
-    };
+    // this.calendarOptions = {
+    //   defaultView: 'listWeek',
+    //   editable: false,
+    //   header: {
+    //     left: '',
+    //     center: 'title',
+    //     right: ''
+    //   },
+    //   events: this.data
+    // };
   }
 }

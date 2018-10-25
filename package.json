@@ -43,9 +43,7 @@
     "angular2-draggable": "^2.1.4",
     "angularx-flatpickr": "^6.1.0",
     "date-fns": "^1.29.0",
-    "flatpickr": "^4.5.2",
-    "fullcalendar": "^3.6.1",
-    "ng-fullcalendar": "^1.6.2"
+    "flatpickr": "^4.5.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.6.3",
@@ -64,6 +62,7 @@
     "@ngx-translate/http-loader": "3.0.1",
     "@types/jasmine": "2.8.7",
     "@types/jasminewd2": "2.0.3",
+    "@types/jquery": "^3.2.7",
     "@types/node": "8.9.4",
     "codelyzer": "4.2.1",
     "core-js": "2.5.6",

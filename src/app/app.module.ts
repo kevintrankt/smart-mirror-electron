@@ -4,6 +4,7 @@ import '../polyfills';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import * as $ from 'jquery';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
@@ -22,7 +23,7 @@ import { HomeComponent } from './components/home/home.component';
 import { WidgetTemplateComponent } from './widget-template/widget-template.component';
 import { AngularDraggableModule } from 'angular2-draggable';
 import { NewsComponent } from './news/news.component';
-import { CalComponent } from './cal/cal.component';
+// import { CalComponent } from './cal/cal.component';
 
 import { FullCalendarModule } from 'ng-fullcalendar';
 import { WeatherComponent } from './weather/weather.component';
@@ -41,7 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     WebviewDirective,
     WidgetTemplateComponent,
     NewsComponent,
-    CalComponent,
+    // CalComponent,
     WeatherComponent
   ],
   imports: [
