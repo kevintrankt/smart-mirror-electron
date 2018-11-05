@@ -1,8 +1,14 @@
 <div class="container">
 
-  <app-widget-template></app-widget-template>
-  <app-news></app-news>
-  <app-weather></app-weather>
+  <div *ngIf="!loggedIn">
+    <div class="login-circle"></div>
+    <div class="login-text">searching for face</div>
+  </div>
 
+  <span *ngIf="isReady() && loggedIn">
+    <app-widget-template class="widget-1"></app-widget-template>
+    <app-weather class="widget-2"></app-weather>
+    <app-news class="widget-3"></app-news>
+  </span>
 
 </div>

@@ -4,10 +4,49 @@
   align-items: center;
   justify-content: center;
 
-  // background: url(../../../assets/background.jpg) no-repeat center fixed;
   background-color: black;
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
 
   color: white;
+}
+
+.login-circle{
+  width: 500px;
+  height: 500px;
+  border-radius: 250px;
+  border-style: solid;
+  border-color: white;
+  margin-bottom: 50px;
+}
+
+.login-text{
+  width: 500px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+}
+
+.widget-1{
+  position: fixed;
+  top : 0;
+  left: 0;
+}
+
+.widget-2{
+  position: fixed;
+  top : 0;
+  right: 0;
+}
+
+.widget-3{
+  position: fixed;
+  bottom : 0;
+  right: 0;
+}
+
+.widget-4{
+  position: fixed;
+  bottom : 0;
+  left: 0;
 }
