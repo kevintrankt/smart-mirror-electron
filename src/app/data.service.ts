@@ -43,4 +43,9 @@ export class DataService {
     }`;
     return this.http.get(url);
   }
+
+  getCalendar() {
+    const client_id = this.config.apiKeys.cal_client;
+    const api_key = this.config.apiKeys.cal;
+  }
 }

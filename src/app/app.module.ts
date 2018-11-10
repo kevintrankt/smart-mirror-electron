@@ -25,8 +25,9 @@ import { AngularDraggableModule } from 'angular2-draggable';
 import { NewsComponent } from './news/news.component';
 // import { CalComponent } from './cal/cal.component';
 
-import { FullCalendarModule } from 'ng-fullcalendar';
+// import { FullCalendarModule } from 'ng-fullcalendar';
 import { WeatherComponent } from './weather/weather.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 // Calendar
 
@@ -43,11 +44,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     WidgetTemplateComponent,
     NewsComponent,
     // CalComponent,
-    WeatherComponent
+    WeatherComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
-    FullCalendarModule,
+    // FullCalendarModule,
     FormsModule,
     HttpClientModule,
     AngularDraggableModule,
