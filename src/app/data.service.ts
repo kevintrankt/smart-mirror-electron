@@ -26,6 +26,7 @@ export class DataService {
       parent.loaded = true;
     });
   }
+
   getNews() {
     const url =
       'https://newsapi.org/v2/top-headlines?' +
@@ -47,5 +48,11 @@ export class DataService {
   getCalendar() {
     const client_id = this.config.apiKeys.cal_client;
     const api_key = this.config.apiKeys.cal;
+  }
+
+  getSubreddit() {
+    const sub = this.activeUser.subreddit;
+    const url = `https://www.reddit.com/r/${sub}/hot/.json?count=5`;
+    return this.http.get(url);
   }
 }

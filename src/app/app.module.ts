@@ -28,6 +28,7 @@ import { NewsComponent } from './news/news.component';
 // import { FullCalendarModule } from 'ng-fullcalendar';
 import { WeatherComponent } from './weather/weather.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { SubredditComponent } from './subreddit/subreddit.component';
 
 // Calendar
 
@@ -45,7 +46,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     NewsComponent,
     // CalComponent,
     WeatherComponent,
-    CalendarComponent
+    CalendarComponent,
+    SubredditComponent
   ],
   imports: [
     BrowserModule,

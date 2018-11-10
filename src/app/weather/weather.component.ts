@@ -32,9 +32,5 @@ export class WeatherComponent implements OnInit {
         console.log('name:', this.name);
       }
     );
-
-    // this.temp = 60.1;
-    // this.desc = 'Clear';
-    // this.name = 'San Jose';
   }
 }

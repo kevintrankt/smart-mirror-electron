@@ -11,7 +11,7 @@
   color: white;
 }
 
-.login-circle{
+.login-circle {
   width: 500px;
   height: 500px;
   border-radius: 250px;
@@ -20,33 +20,33 @@
   margin-bottom: 50px;
 }
 
-.login-text{
+.login-text {
   width: 500px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
 }
 
-.widget-1{
+.widget-0 {
   position: fixed;
-  top : 0;
-  left: 0;
+  top: 10px;
+  left: 10px;
 }
 
-.widget-2{
+.widget-1 {
   position: fixed;
-  top : 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
 }
 
-.widget-3{
+.widget-2 {
   position: fixed;
-  bottom : 0;
-  right: 0;
+  bottom: 10px;
+  right: 10px;
 }
 
-.widget-4{
+.widget-3 {
   position: fixed;
-  bottom : 0;
-  left: 0;
+  bottom: 10px;
+  left: 10px;
 }

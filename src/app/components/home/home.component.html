@@ -1,17 +1,8 @@
 <div class="container">
-  <div *ngIf="!loggedIn">
+  <div *ngIf="!loggedIn && showLogin">
     <div class="login-circle"></div>
     <div class="login-text">searching for face</div>
   </div>
-
-  <!--
-    <span *ngIf="isReady() && loggedIn">
-      <app-widget-template class="widget-1"></app-widget-template>
-      <app-weather class="widget-2"></app-weather>
-      <app-news class="widget-3"></app-news>
-      <app-calendar class="widget-4"></app-calendar>
-    </span>
-  -->
 
   <span *ngIf="isReady() && loggedIn">
     <div
@@ -20,17 +11,24 @@
     >
       <app-widget-template
         *ngIf="widget == 0"
-        [ngClass]="'widget-' + (i + 1)"
+        [ngClass]="'widget-' + i"
       ></app-widget-template>
       <app-weather
         *ngIf="widget == 1"
-        [ngClass]="'widget-' + (i + 1)"
+        [ngClass]="'widget-' + i"
       ></app-weather>
-      <app-news *ngIf="widget == 2" [ngClass]="'widget-' + (i + 1)"></app-news>
+      <app-news
+        *ngIf="widget == 2"
+        [ngClass]="'widget-' + i"
+      ></app-news>
       <app-calendar
         *ngIf="widget == 3"
-        [ngClass]="'widget-' + (i + 1)"
+        [ngClass]="'widget-' + i"
       ></app-calendar>
+      <app-subreddit
+        *ngIf="widget == 4"
+        [ngClass]="'widget-' + i"
+      ></app-subreddit>
     </div>
   </span>
 </div>

@@ -10,6 +10,7 @@ import { HostListener } from '@angular/core';
 export class HomeComponent implements OnInit {
   constructor(private data: DataService) {}
   loggedIn = false;
+  showLogin = true;
   activeUser;
 
   ngOnInit() {
@@ -22,21 +23,24 @@ export class HomeComponent implements OnInit {
 
   @HostListener('document:keypress', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.key === '0' && !this.loggedIn) {
-      this.data.setActiveUser(this.data.config.users[0]);
-      this.activeUser = this.data.activeUser;
-      this.loggedIn = true;
-    }
+    const eventKey = parseInt(event.key, 10);
 
-    if (event.key === '1' && !this.loggedIn) {
-      this.data.setActiveUser(this.data.config.users[1]);
+    if (
+      (eventKey >= 0 || eventKey <= 9) &&
+      !this.loggedIn &&
+      this.data.config.users[eventKey]
+    ) {
+      this.data.setActiveUser(this.data.config.users[eventKey]);
       this.activeUser = this.data.activeUser;
-
       this.loggedIn = true;
     }
 
     if (event.key === ' ') {
       this.loggedIn = false;
+    }
+
+    if (event.key === 'l') {
+      this.showLogin = !this.showLogin;
     }
   }
 }
