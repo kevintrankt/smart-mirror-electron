@@ -55,4 +55,9 @@ export class DataService {
     const url = `https://www.reddit.com/r/${sub}/hot/.json?count=5`;
     return this.http.get(url);
   }
+
+  getNBA() {
+    const apiKey = this.config.apiKeys.importio;
+    const url = `https://extraction.import.io/query/extractor/10160086-45ae-4adb-a8a2-0053d8243d16?_apikey=${apiKey}&url=http%3A%2F%2Fwww.espn.com%2Fnba%2Fscoreboard`;
+  }
 }
