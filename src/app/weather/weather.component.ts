@@ -37,7 +37,7 @@ export class WeatherComponent implements OnInit {
 
         if (this.desc === 'Clouds') {
           this.icon = 'cloud';
-        } else if (this.desc === 'Mist' || this.desc === 'Haze') {
+        } else if (this.desc === 'Mist' || this.desc === 'Haze' || this.desc === 'Fog') {
           this.icon = 'water';
         } else if (this.desc === 'Clear' && ((hour >= 17 && hour > 6) || hour <= 6)) {
           this.icon = 'moon';
