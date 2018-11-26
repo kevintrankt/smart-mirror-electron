@@ -19,7 +19,7 @@ export class SubredditComponent implements OnInit {
       },
       error => console.log(error),
       () => {
-        this.posts = this.subData.data.children.slice(0, 6);
+        this.posts = this.subData.data.children.slice(0, 8);
         console.log(this.posts);
       }
     );

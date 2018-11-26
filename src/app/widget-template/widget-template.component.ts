@@ -68,6 +68,10 @@ export class WidgetTemplateComponent implements OnInit {
         this.period = '';
       }
 
+      if (this.hours === 0) {
+        this.hours = 12;
+      }
+
       // Get current minutes
       this.minutes = now.getMinutes();
 

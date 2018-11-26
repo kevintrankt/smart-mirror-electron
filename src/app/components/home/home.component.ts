@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   loggedIn = false;
   showLogin = true;
   activeUser;
+  loginClass;
+  widgetClass;
 
   ngOnInit() {
     this.data.getConfig();
@@ -25,21 +27,22 @@ export class HomeComponent implements OnInit {
   handleKeyboardEvent(event: KeyboardEvent) {
     const eventKey = parseInt(event.key, 10);
 
-    if (
-      (eventKey >= 0 || eventKey <= 9) &&
-      !this.loggedIn &&
-      this.data.config.users[eventKey]
-    ) {
+    if ((eventKey >= 0 || eventKey <= 9) && !this.loggedIn && this.data.config.users[eventKey]) {
+      this.loginClass = 'animated fadeOut';
+      this.widgetClass = 'animated fadeIn delay-.5s';
       this.data.setActiveUser(this.data.config.users[eventKey]);
       this.activeUser = this.data.activeUser;
       this.loggedIn = true;
     }
 
     if (event.key === ' ') {
+      this.loginClass = 'animated fadeIn delay-.5s';
+      this.widgetClass = 'animated fadeOut';
       this.loggedIn = false;
     }
 
     if (event.key === 'l') {
+      this.loginClass = 'animated fadeOut';
       this.showLogin = !this.showLogin;
     }
   }

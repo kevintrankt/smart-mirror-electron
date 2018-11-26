@@ -29,6 +29,7 @@ import { NewsComponent } from './news/news.component';
 import { WeatherComponent } from './weather/weather.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { SubredditComponent } from './subreddit/subreddit.component';
+import { DestinationComponent } from './destination/destination.component';
 
 // Calendar
 
@@ -47,7 +48,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     // CalComponent,
     WeatherComponent,
     CalendarComponent,
-    SubredditComponent
+    SubredditComponent,
+    DestinationComponent
   ],
   imports: [
     BrowserModule,

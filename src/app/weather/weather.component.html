@@ -1,4 +1,7 @@
 <div ngDraggable ngResizable class="widget-body">
-  <h1 class="temp">{{temp}}°F</h1>
-  <h2 class="location">{{name}}</h2>
+  <div class="weather-icon"><i [ngClass]="'fas fa-' + icon"></i></div>
+  <div class="weather-text">
+    <h1 class="temp">{{ temp }}°F</h1>
+    <h2 class="location">{{ name }}</h2>
+  </div>
 </div>

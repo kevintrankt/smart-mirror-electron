@@ -1,34 +1,19 @@
 <div class="container">
-  <div *ngIf="!loggedIn && showLogin">
+  <!-- Login Screen -->
+  <div [className]="loginClass" *ngIf="!loggedIn && showLogin">
     <div class="login-circle"></div>
     <div class="login-text">searching for face</div>
   </div>
 
+  <!-- Populate Widgets for logged in users -->
   <span *ngIf="isReady() && loggedIn">
-    <div
-      *ngFor="let widget of activeUser.widgets; let i = index"
-      [attr.data-index]="i"
-    >
-      <app-widget-template
-        *ngIf="widget == 0"
-        [ngClass]="'widget-' + i"
-      ></app-widget-template>
-      <app-weather
-        *ngIf="widget == 1"
-        [ngClass]="'widget-' + i"
-      ></app-weather>
-      <app-news
-        *ngIf="widget == 2"
-        [ngClass]="'widget-' + i"
-      ></app-news>
-      <app-calendar
-        *ngIf="widget == 3"
-        [ngClass]="'widget-' + i"
-      ></app-calendar>
-      <app-subreddit
-        *ngIf="widget == 4"
-        [ngClass]="'widget-' + i"
-      ></app-subreddit>
+    <div [className]="widgetClass" *ngFor="let widget of activeUser.widgets; let i = index" [attr.data-index]="i">
+      <app-widget-template *ngIf="widget == 0" [ngClass]="'widget-' + i"></app-widget-template>
+      <app-weather *ngIf="widget == 1" [ngClass]="'widget-' + i"></app-weather>
+      <app-news *ngIf="widget == 2" [ngClass]="'widget-' + i"></app-news>
+      <app-calendar *ngIf="widget == 3" [ngClass]="'widget-' + i"></app-calendar>
+      <app-subreddit *ngIf="widget == 4" [ngClass]="'widget-' + i"></app-subreddit>
+      <app-destination *ngIf="widget == 5" [ngClass]="'widget-' + i"></app-destination>
     </div>
   </span>
 </div>

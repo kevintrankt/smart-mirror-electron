@@ -3,10 +3,22 @@
   width: auto;
 }
 
-.location{
+.weather-icon {
+  float: left;
+  font-size: 2.8em;
+  padding-right: 8px;
+  padding-top: 8px;
+}
+
+.weather-text {
+  float: right;
+}
+
+.location {
   margin: 0;
 }
 
-.temp{
+.temp {
   margin: 0;
+  font-size: 3em;
 }
