@@ -11,6 +11,14 @@
   color: white;
 }
 
+.widgets {
+  position: fixed;
+}
+
+.login {
+  position: fixed;
+}
+
 .login-circle {
   width: 500px;
   height: 500px;
@@ -25,6 +33,12 @@
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
+}
+
+.welcome {
+  text-align: center;
+  font-size: 4rem;
+  position: fixed;
 }
 
 .widget-0 {
@@ -48,5 +62,25 @@
 .widget-3 {
   position: fixed;
   bottom: 10px;
+  left: 10px;
+}
+
+.widget2-0 {
+  position: fixed;
+  top: 10px;
+}
+
+.widget2-1 {
+  position: fixed;
+  right: 10px;
+}
+
+.widget2-2 {
+  position: fixed;
+  bottom: 10px;
+}
+
+.widget2-3 {
+  position: fixed;
   left: 10px;
 }

@@ -1,16 +1,7 @@
 <div ngDraggable ngResizable class="widget-body">
   <div class="subreddit-container">
-    <h2>r/{{ sub }}</h2>
+    <h2>/r/{{ sub }}</h2>
     <div class="subreddit-post">
-      <!--
-        <h3 class="post-titles" *ngFor="let post of posts">
-          <span *ngIf="!post.data.stickied">{{ post.data.title }}</span>
-          <div class="post-score" *ngIf="!post.data.stickied">
-            <br />{{ post.data.score }}
-          </div>
-        </h3>
-      -->
-
       <div class="post" *ngFor="let post of posts">
         <div class="score" *ngIf="!post.data.stickied">{{ post.data.score }}</div>
         <div class="title" *ngIf="!post.data.stickied">{{ post.data.title }}</div>

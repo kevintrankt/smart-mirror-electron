@@ -16,6 +16,7 @@ export class DestinationComponent implements OnInit {
   distance;
   location;
   name;
+  loaded = false;
 
   ngOnInit() {
     this.data.getDuration().subscribe(
@@ -32,6 +33,7 @@ export class DestinationComponent implements OnInit {
         this.route = this.destinationData[0].Route[0].text;
         this.distance = this.destinationData[0].Distance[0].text;
         this.location = this.destinationData[0].Location[0].text;
+        this.loaded = true;
 
         console.log(this.duration);
         console.log(this.route);

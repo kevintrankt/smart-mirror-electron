@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   loggedIn = false;
   showLogin = true;
   activeUser;
-  loginClass;
+  loginClass = 'animated fadeIn';
   widgetClass;
 
   ngOnInit() {
@@ -29,21 +29,28 @@ export class HomeComponent implements OnInit {
 
     if ((eventKey >= 0 || eventKey <= 9) && !this.loggedIn && this.data.config.users[eventKey]) {
       this.loginClass = 'animated fadeOut';
-      this.widgetClass = 'animated fadeIn delay-.5s';
+      this.widgetClass = 'animated fadeIn delay-3s';
       this.data.setActiveUser(this.data.config.users[eventKey]);
       this.activeUser = this.data.activeUser;
       this.loggedIn = true;
     }
 
     if (event.key === ' ') {
-      this.loginClass = 'animated fadeIn delay-.5s';
+      this.loginClass = 'animated fadeIn delay-1s';
       this.widgetClass = 'animated fadeOut';
-      this.loggedIn = false;
+
+      setTimeout(() => {
+        this.loggedIn = false;
+      }, 2000);
     }
 
     if (event.key === 'l') {
-      this.loginClass = 'animated fadeOut';
       this.showLogin = !this.showLogin;
+      if (this.showLogin) {
+        this.loginClass = 'animated fadeIn';
+      } else {
+        this.loginClass = 'animated fadeOut';
+      }
     }
   }
 }
