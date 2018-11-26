@@ -11,6 +11,7 @@
 
   <!-- Populate Widgets for logged in users -->
   <span class="widgets" *ngIf="isReady() && loggedIn">
+    <!-- Widget Set 1 -->
     <div [className]="widgetClass" *ngFor="let widget of activeUser.widgets; let i = index" [attr.data-index]="i">
       <app-widget-template *ngIf="widget == 0" [ngClass]="'widget-' + i"></app-widget-template>
       <app-weather *ngIf="widget == 1" [ngClass]="'widget-' + i"></app-weather>
@@ -20,6 +21,7 @@
       <app-destination *ngIf="widget == 5" [ngClass]="'widget-' + i"></app-destination>
     </div>
 
+    <!-- Widget Set 2 -->
     <div [className]="widgetClass" *ngFor="let widget of activeUser.widgets2; let i = index" [attr.data-index]="i">
       <app-widget-template *ngIf="widget == 0" [ngClass]="'widget2-' + i"></app-widget-template>
       <app-weather *ngIf="widget == 1" [ngClass]="'widget2-' + i"></app-weather>

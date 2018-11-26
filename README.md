@@ -25,6 +25,58 @@ npm install
 
 - **in a terminal window** -> npm start
 
+## How to Make a Widget
+1. Modify `/src/assets/config.json` to include any API keys or user information needed.
+2. Modify `/src/app/data.service.ts` to make any API calls.
+	```javascript
+	getXXX() {
+		const apiKey = this.config.apiKeys.yourAPIKey;
+		const userParameter = this.activeUser.yourUserParameter;
+		const url  = `https://example.com_apikey=${apiKey}&example=${userParameter}`;
+		return this.http.get(url);
+	}
+	```
+3. Run `ng g c WIDGETNAME` in the root directory of the Electron project.
+4. Replace the contents of `/src/app/WIDGETNAME/WIDGETNAME.component.html` with
+	```html
+	<div _ngDraggable_ _ngResizable_ _class_="widget-body">{{greeting}} {{response}}</div>
+	```
+5. Modify `/src/app/WIDGETNAME/WIDGETNAME.component.ts` to import the Data service
+	```typescript
+	import { DataService } from '../data.service';
+	```
+6. In the same file, replace everything below `export class WIDGETNAME...` with the following:
+	```typescript
+		constructor(private data: DataService) {}
+		greeting = 'Widget Works!';
+		response;
+		ngOnInit() {
+			setInterval(()  =>  {
+				this.data.getDuration().subscribe(
+					data => {this.response = data;},
+					error => console.log(error),
+					()=>{
+						console.log(this.response);
+					}
+				);
+			},  60);
+		}
+	}
+	```
+	You can modify the `setInterval` method to indicate how often the Smart Mirror will make an API call.
+	
+7. Modify `/src/app/components/home/home.component.html` to recognize the new widget in `config.json`.
+
+	Add the following line to the widget set 1 block:
+	```html
+	<app-WIDGETNAME *ngIf="widget == X" [ngClass]="'widget-' + i"></app-WIDGETNAME>
+	```
+	And the following line to the widget set 2 block:
+	```html
+	<app-WIDGETNAME *ngIf="widget == X" [ngClass]="'widget2-' + i"></app-WIDGETNAME>
+	```
+	Where X is equal to the number of existing widgets + 2. This value will represent the widget's ID.
+
 ## Commands
 
 | Command                    | Description                                                                                      |
