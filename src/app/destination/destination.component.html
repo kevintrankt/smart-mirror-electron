@@ -1,7 +1,9 @@
 <div ngDraggable ngResizable class="widget-body">
-  <div *ngIf="!loaded">Calculating Distance...</div>
-  <div *ngIf="loaded">
-    <div class="line-1">{{ duration }} to {{ name }}</div>
-    <div class="line-2">{{ route }}</div>
+  <div id="content">
+    <div *ngIf="!loaded">Calculating Distance...</div>
+    <div *ngIf="loaded">
+      <div class="line-1">{{ duration }} to {{ name }}</div>
+      <div class="line-2">{{ route }}</div>
+    </div>
   </div>
 </div>

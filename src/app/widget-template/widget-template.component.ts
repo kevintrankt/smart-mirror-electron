@@ -14,11 +14,9 @@ export class WidgetTemplateComponent implements OnInit {
   public minutes;
   public period;
 
-  // TODO: Create config file to hold timeFormat
   private timeFormat;
 
   constructor() {
-    // TODO: Create config file to hold timeFormat
     this.timeFormat = '12hr';
 
     // Update time every second
@@ -26,20 +24,7 @@ export class WidgetTemplateComponent implements OnInit {
       // Get current date
       let now = new Date();
       let dayArr = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-      let monthArr = [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec'
-      ];
+      let monthArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
       this.formattedDate = now.toLocaleDateString('en-US');
 
       // Get month #
