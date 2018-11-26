@@ -24,8 +24,7 @@ npm install
 ## To build for development
 
 - **in a terminal window** -> npm start
-
-## How to Make a Widget
+### How to Make a Widget
 1. Modify `/src/assets/config.json` to include any API keys or user information needed.
 2. Modify `/src/app/data.service.ts` to make any API calls.
 	```javascript
@@ -39,7 +38,7 @@ npm install
 3. Run `ng g c WIDGETNAME` in the root directory of the Electron project.
 4. Replace the contents of `/src/app/WIDGETNAME/WIDGETNAME.component.html` with
 	```html
-	<div _ngDraggable_ _ngResizable_ _class_="widget-body">{{greeting}} {{response}}</div>
+	<div  ngDraggable  ngResizable  class="widget-body">{{greeting}} {{response}}</div>
 	```
 5. Modify `/src/app/WIDGETNAME/WIDGETNAME.component.ts` to import the Data service
 	```typescript

@@ -38,11 +38,6 @@ export class DataService {
     return this.http.get(url);
   }
 
-  getCalendar() {
-    const client_id = this.config.apiKeys.cal_client;
-    const api_key = this.config.apiKeys.cal;
-  }
-
   getSubreddit() {
     const sub = this.activeUser.subreddit;
     const url = `https://www.reddit.com/r/${sub}/hot/.json?count=5`;
@@ -59,6 +54,14 @@ export class DataService {
     const apiKey = this.config.apiKeys.importio;
     const destination = this.activeUser.destination;
     const url = `https://extraction.import.io/query/extractor/4f2527f9-d915-40c1-b157-2db7bb62299e?_apikey=${apiKey}&url=${destination}`;
+    return this.http.get(url);
+  }
+
+  getCalendar() {
+    const apiKey = this.config.apiKeys.importio;
+    const cal = this.activeUser.calendar;
+    const path = `https://kevintrankt.com/smart-mirror-cal-redirect/?cal=${cal}`;
+    const url = `https://extraction.import.io/query/extractor/70608df1-74dd-4806-8a7d-41a6030ad1ad?_apikey=${apiKey}&url=${path}`;
     return this.http.get(url);
   }
 }

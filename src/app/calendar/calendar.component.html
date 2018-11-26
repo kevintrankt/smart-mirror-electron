@@ -1,3 +1,6 @@
-<p>
-  calendar works!
-</p>
+<div ngDraggable ngResizable class="widget-body">
+  <div class="event" *ngFor="let event of events">
+    <div class="time" *ngIf="event.time">{{ event.time }}</div>
+    <div class="title" *ngIf="event.time">{{ event.title }}</div>
+  </div>
+</div>
