@@ -12,17 +12,25 @@
   <!-- Populate Widgets for logged in users -->
   <span class="widgets" *ngIf="isReady() && loggedIn">
     <!-- Widget Set 1 -->
-    <div [className]="widgetClass" *ngFor="let widget of activeUser.widgets; let i = index" [attr.data-index]="i">
-      <app-widget-template *ngIf="widget == 0" [ngClass]="'widget-' + i"></app-widget-template>
-      <app-weather *ngIf="widget == 1" [ngClass]="'widget-' + i"></app-weather>
-      <app-news *ngIf="widget == 2" [ngClass]="'widget-' + i"></app-news>
-      <app-calendar *ngIf="widget == 3" [ngClass]="'widget-' + i"></app-calendar>
-      <app-subreddit *ngIf="widget == 4" [ngClass]="'widget-' + i"></app-subreddit>
-      <app-destination *ngIf="widget == 5" [ngClass]="'widget-' + i"></app-destination>
+    <div
+      [className]="widgetClass + ' widget-' + i"
+      *ngFor="let widget of activeUser.widgets; let i = index"
+      [attr.data-index]="i"
+    >
+      <app-widget-template *ngIf="widget == 0"></app-widget-template>
+      <app-weather *ngIf="widget == 1"></app-weather>
+      <app-news *ngIf="widget == 2"></app-news>
+      <app-calendar *ngIf="widget == 3"></app-calendar>
+      <app-subreddit *ngIf="widget == 4"></app-subreddit>
+      <app-destination *ngIf="widget == 5"></app-destination>
     </div>
 
     <!-- Widget Set 2 -->
-    <div [className]="widgetClass" *ngFor="let widget of activeUser.widgets2; let i = index" [attr.data-index]="i">
+    <div
+      [className]="widgetClass + ' widget2-' + i"
+      *ngFor="let widget of activeUser.widgets2; let i = index"
+      [attr.data-index]="i"
+    >
       <app-widget-template *ngIf="widget == 0" [ngClass]="'widget2-' + i"></app-widget-template>
       <app-weather *ngIf="widget == 1" [ngClass]="'widget2-' + i"></app-weather>
       <app-news *ngIf="widget == 2" [ngClass]="'widget2-' + i"></app-news>

@@ -13,6 +13,16 @@
 
 .widgets {
   position: fixed;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-template-areas:
+    'a b c'
+    'd e f'
+    'g h i';
+  align-items: start;
 }
 
 .login {
@@ -42,49 +52,57 @@
 }
 
 .widget-0 {
-  position: fixed;
-  top: 50px;
-  left: 50px;
+  margin: 50px 0 0 50px;
+  grid-area: a;
+  justify-self: start;
+  align-self: start;
 }
 
 .widget-1 {
-  position: fixed;
-  top: 50px;
-  right: 50px;
+  margin: 50px 50px 0 0;
+  grid-area: c;
+  justify-self: end;
+  align-self: start;
 }
 
 .widget-2 {
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
+  margin: 0 50px 50px 0;
+  grid-area: i;
+  justify-self: end;
+  align-self: end;
 }
 
 .widget-3 {
-  position: fixed;
-  bottom: 50px;
-  left: 50px;
+  margin: 0 0 50px 50px;
+  grid-area: g;
+  justify-self: start;
+  align-self: end;
 }
 
 .widget2-0 {
-  position: fixed;
-  top: 50px;
-  width: 100%;
-  left: 0px;
+  margin-top: 50px;
+  grid-area: b;
+  justify-self: center;
+  align-self: start;
 }
 
 .widget2-1 {
-  position: fixed;
-  right: 50px;
+  margin-right: 50px;
+  grid-area: f;
+  align-self: center;
+  justify-self: end;
 }
 
 .widget2-2 {
-  position: fixed;
-  bottom: 50px;
-  width: 100%;
-  left: 0px;
+  margin-bottom: 50px;
+  grid-area: h;
+  justify-self: center;
+  align-self: end;
 }
 
 .widget2-3 {
-  position: fixed;
-  left: 50px;
+  margin-left: 50px;
+  grid-area: d;
+  align-self: center;
+  justify-self: start;
 }
