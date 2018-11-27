@@ -19,26 +19,37 @@ export class DestinationComponent implements OnInit {
   loaded = false;
 
   ngOnInit() {
+    this.initializeWidget(60);
+  }
+
+  /*-------------------------------------------------------------------------|
+  | Initializes the widget to populate the DOM with data from data.service.  |
+  | -----------------------------------------------------------------------  |
+  | @param {number} reload Number of seconds before the widget reloads       |
+  |-------------------------------------------------------------------------*/
+  initializeWidget(reload) {
+    this.getDuration();
+    setInterval(() => {
+      this.getDuration();
+    }, reload * 1000);
+  }
+
+  /*-------------------------------------------------------------------------|
+  | Fetches data from API by subscribing to data.service methods             |
+  |-------------------------------------------------------------------------*/
+  getDuration() {
     this.data.getDuration().subscribe(
       data => {
         this.response = data;
       },
       error => console.log(error),
       () => {
-        console.log(this.response);
         this.destinationData = this.response.extractorData.data[0].group;
-        console.log(this.destinationData);
-
         this.duration = this.destinationData[0].Duration[0].text;
         this.route = this.destinationData[0].Route[0].text;
         this.distance = this.destinationData[0].Distance[0].text;
         this.location = this.destinationData[0].Location[0].text;
         this.loaded = true;
-
-        console.log(this.duration);
-        console.log(this.route);
-        console.log(this.distance);
-        console.log(this.location);
       }
     );
     this.name = this.data.activeUser.destination_name;
