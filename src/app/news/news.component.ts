@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-news',
@@ -13,35 +12,22 @@ export class NewsComponent implements OnInit {
   constructor(private data: DataService) {}
 
   ngOnInit() {
+    this.getNews();
 
+    setInterval(() => {
+      this.getNews();
+    }, 1800000);
+  }
+
+  getNews() {
     this.data.getNews().subscribe(
       data => {
         this.news$ = data;
       },
       error => console.log(error),
       () => {
-        console.log('news:', this.news$);
         this.articles = this.news$.articles.slice(0, 6);
-        this.processNews();
-        console.log(this.articles);
       }
     );
-
-    setInterval(() => {
-      this.data.getNews().subscribe(
-        data => {
-          this.news$ = data;
-        },
-        error => console.log(error),
-        () => {
-          console.log('news:', this.news$);
-          this.articles = this.news$.articles.slice(0, 6);
-          this.processNews();
-          console.log(this.articles);
-        }
-      );
-    }, 1800000);
   }
-
-  processNews() {}
 }
