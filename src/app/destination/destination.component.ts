@@ -19,7 +19,7 @@ export class DestinationComponent implements OnInit {
   loaded = false;
 
   ngOnInit() {
-    this.initializeWidget(60);
+    this.initializeWidget(20 * 60);
   }
 
   /*-------------------------------------------------------------------------|

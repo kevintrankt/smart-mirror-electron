@@ -13,7 +13,7 @@ export class CalendarComponent implements OnInit {
   events = [];
 
   ngOnInit() {
-    this.initializeWidget(60);
+    this.initializeWidget(20 * 60);
   }
 
   /*-------------------------------------------------------------------------|
