@@ -12,13 +12,24 @@ export class NewsComponent implements OnInit {
   constructor(private data: DataService) {}
 
   ngOnInit() {
-    this.getNews();
-
-    setInterval(() => {
-      this.getNews();
-    }, 1800000);
+    this.initializeWidget(60);
   }
 
+  /*-------------------------------------------------------------------------|
+  | Initializes the widget to populate the DOM with data from data.service.  |
+  | -----------------------------------------------------------------------  |
+  | @param {number} reload Number of seconds before the widget reloads       |
+  |-------------------------------------------------------------------------*/
+  initializeWidget(reload) {
+    this.getNews();
+    setInterval(() => {
+      this.getNews();
+    }, reload * 1000);
+  }
+
+  /*-------------------------------------------------------------------------|
+  | Fetches data from API by subscribing to data.service methods             |
+  |-------------------------------------------------------------------------*/
   getNews() {
     this.data.getNews().subscribe(
       data => {

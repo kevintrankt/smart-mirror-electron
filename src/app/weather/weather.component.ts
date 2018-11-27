@@ -14,27 +14,35 @@ export class WeatherComponent implements OnInit {
   icon;
 
   constructor(private data: DataService) {}
-
   ngOnInit() {
+    this.initializeWidget(60);
+  }
+
+  /*-------------------------------------------------------------------------|
+  | Initializes the widget to populate the DOM with data from data.service.  |
+  | -----------------------------------------------------------------------  |
+  | @param {number} reload Number of seconds before the widget reloads       |
+  |-------------------------------------------------------------------------*/
+  initializeWidget(reload) {
+    this.getWeather();
+    setInterval(() => {
+      this.getWeather();
+    }, reload * 1000);
+  }
+  getWeather() {
     this.data.getWeather().subscribe(
       data => {
         this.weather$ = data;
       },
       error => console.log(error),
       () => {
-        console.log('weather:', this.weather$);
         this.temp = Math.round(this.weather$.main.temp);
-        console.log('temp:', this.temp);
-
         this.desc = this.weather$.weather[0].main;
-        console.log('desc:', this.desc);
-
         this.name = this.weather$.name;
-        console.log('name:', this.name);
 
         const hour = new Date().getHours();
-        console.log('hour', hour);
 
+        // Select icons for certain weather type
         if (this.desc === 'Clouds') {
           this.icon = 'cloud';
         } else if (this.desc === 'Mist' || this.desc === 'Haze' || this.desc === 'Fog') {
