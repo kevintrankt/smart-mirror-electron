@@ -3,8 +3,12 @@
     <h2>/r/{{ sub }}</h2>
     <div class="subreddit-post">
       <div class="post" *ngFor="let post of posts">
-        <div class="score" *ngIf="!post.data.stickied">{{ post.data.score }}</div>
+        <div class="score" *ngIf="!post.data.stickied">
+          <img class="image" [src]="post.data.thumbnail" *ngIf="!post.data.stickied && post.data.thumbnail != 'self'" />
+          <span *ngIf="post.data.thumbnail == 'self' && showScore">{{ post.data.score }}</span>
+        </div>
         <div class="title" *ngIf="!post.data.stickied">{{ post.data.title }}</div>
+        <p class="post-snippet" *ngIf="!post.data.stickied">{{ post.data.selftext }}</p>
       </div>
     </div>
   </div>

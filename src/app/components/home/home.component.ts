@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   handleKeyboardEvent(event: KeyboardEvent) {
     const eventKey = parseInt(event.key, 10);
 
-    if ((eventKey >= 0 || eventKey <= 9) && !this.loggedIn && this.data.config.users[eventKey]) {
+    if ((eventKey >= 0 || eventKey <= 9) && !this.loggedIn && this.data.config.users[eventKey] && this.showLogin) {
       this.loginClass = 'animated fadeOut';
       this.widgetClass = 'animated fadeIn delay-3s';
       this.data.setActiveUser(this.data.config.users[eventKey]);
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
       this.loggedIn = true;
     }
 
-    if (event.key === ' ') {
+    if (event.key === ' ' && this.loggedIn && this.showLogin) {
       this.loginClass = 'animated fadeIn delay-1s';
       this.widgetClass = 'animated fadeOut';
 
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
       }, 2000);
     }
 
-    if (event.key === 'l') {
+    if (event.key === 'l' && !this.loggedIn) {
       this.showLogin = !this.showLogin;
       if (this.showLogin) {
         this.loginClass = 'animated fadeIn';

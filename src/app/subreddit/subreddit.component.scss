@@ -1,5 +1,5 @@
 h2 {
-  margin: 0 0 5px 10px;
+  margin: 0 0 8px 15px;
 }
 
 .widget-body {
@@ -11,7 +11,7 @@ h2 {
 }
 
 .post-titles {
-  margin-left: 5px;
+  margin-left: 10px;
   margin-bottom: 2px;
 }
 
@@ -30,14 +30,33 @@ h2 {
   display: inline-block;
   height: 100%;
   vertical-align: top;
-  font-size: 1.1em;
+  font-size: 0.9em;
+  padding-top: 1px;
+  text-align: center;
 }
 
 .title {
+  vertical-align: top;
   width: 80%;
   margin: 0;
   display: inline-block;
   height: 100%;
-  font-size: 1.3em;
-  padding-bottom: 5px;
+}
+
+.post-snippet {
+  padding-left: 20%;
+  margin-top: 0;
+  font-size: 0.75rem;
+  margin-bottom: 15px;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 2.7rem;
+}
+
+.image {
+  vertical-align: top;
+  object-fit: cover;
+  width: 80%;
+  height: auto;
 }

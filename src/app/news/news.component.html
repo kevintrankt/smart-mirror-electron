@@ -1,12 +1,10 @@
 <div ngDraggable ngResizable class="widget-body">
-
   <div class="news">
     <div *ngFor="let article of articles" class="news-content">
-      <h3 class="news-title">{{article.title}}</h3>
-      <p class="news-snippet">{{article.description}}</p>
+      <ul>
+        <li class="news-title">{{ article.title }}</li>
+        <p class="news-snippet">{{ article.description }}</p>
+      </ul>
     </div>
-
-
   </div>
-
 </div>
