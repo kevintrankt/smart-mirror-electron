@@ -40,8 +40,6 @@ export class SubredditComponent implements OnInit {
       () => {
         this.posts = this.subData.data.children.slice(0, 8);
 
-        console.log(this.posts);
-
         // Convert numbers larger than 10,000
         this.posts.map(x => {
           let score = x.data.score;
