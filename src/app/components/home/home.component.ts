@@ -33,7 +33,9 @@ export class HomeComponent implements OnInit {
       this.widgetClass = 'animated fadeIn delay-3s';
       this.data.setActiveUser(this.data.config.users[eventKey]);
       this.activeUser = this.data.activeUser;
-      this.activeUser.msg === '' ? (this.greeting = 'welcome') : (this.greeting = this.activeUser.msg);
+      this.activeUser.msg === ''
+        ? (this.greeting = `welcome, ${this.activeUser.name}`)
+        : (this.greeting = this.activeUser.msg);
       this.loggedIn = true;
     }
 
