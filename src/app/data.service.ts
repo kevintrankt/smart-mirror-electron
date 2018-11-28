@@ -38,6 +38,13 @@ export class DataService {
     return this.http.get(url);
   }
 
+  getForecast() {
+    const location = this.activeUser.location;
+    const url = `http://api.openweathermap.org/data/2.5/forecast?zip=${location},us&units=imperial
+      &APPID=${this.config.apiKeys.weather}`;
+    return this.http.get(url);
+  }
+
   getSubreddit() {
     const sub = this.activeUser.subreddit;
     const url = `https://www.reddit.com/r/${sub}/hot/.json?count=5`;
@@ -62,6 +69,7 @@ export class DataService {
     const cal = this.activeUser.calendar;
     const path = `https://kevintrankt.com/smart-mirror-cal-redirect/?cal=${cal}`;
     const url = `https://extraction.import.io/query/extractor/70608df1-74dd-4806-8a7d-41a6030ad1ad?_apikey=${apiKey}&url=${path}`;
+    console.log(url);
     return this.http.get(url);
   }
 }

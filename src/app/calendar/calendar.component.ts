@@ -24,7 +24,6 @@ export class CalendarComponent implements OnInit {
   initializeWidget(reload) {
     this.getCalendar();
     setInterval(() => {
-      this.events = [];
       this.getCalendar();
     }, reload * 1000);
   }
@@ -39,6 +38,7 @@ export class CalendarComponent implements OnInit {
       },
       error => console.log(error),
       () => {
+        this.events = [];
         for (const event of this.response.extractorData.data[0].group) {
           const eventData = {};
           // Select only events that have a time

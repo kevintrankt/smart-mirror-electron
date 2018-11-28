@@ -30,6 +30,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { SubredditComponent } from './subreddit/subreddit.component';
 import { DestinationComponent } from './destination/destination.component';
+import { ForecastComponent } from './forecast/forecast.component';
 
 // Calendar
 
@@ -49,7 +50,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WeatherComponent,
     CalendarComponent,
     SubredditComponent,
-    DestinationComponent
+    DestinationComponent,
+    ForecastComponent
   ],
   imports: [
     BrowserModule,

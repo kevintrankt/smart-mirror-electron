@@ -29,6 +29,10 @@ export class WeatherComponent implements OnInit {
       this.getWeather();
     }, reload * 1000);
   }
+
+  /*-------------------------------------------------------------------------|
+  | Fetches data from API by subscribing to data.service methods             |
+  |-------------------------------------------------------------------------*/
   getWeather() {
     this.data.getWeather().subscribe(
       data => {
@@ -51,6 +55,8 @@ export class WeatherComponent implements OnInit {
           this.icon = 'moon';
         } else if (this.desc === 'Clear' && (hour > 6 && hour < 17)) {
           this.icon = 'sun';
+        } else if (this.desc === 'Rain') {
+          this.icon = 'cloud-rain';
         }
       }
     );

@@ -1,0 +1,9 @@
+<div ngDraggable ngResizable class="widget-body">
+  <div class="forecast" *ngFor="let forecast of filteredForecast">
+    <div class="day">{{ forecast.day }}</div>
+    <div class="weather">
+      <h1 class="temp">{{ forecast.temp }}°</h1>
+      <div class="weather-icon"><i [ngClass]="'fas fa-' + forecast.icon"></i></div>
+    </div>
+  </div>
+</div>

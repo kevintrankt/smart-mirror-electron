@@ -1,0 +1,33 @@
+.widget-body {
+  width: auto;
+  text-align: center;
+}
+
+.day {
+  padding-right: 9px;
+  font-weight: bold;
+}
+
+.temp {
+  margin: 0;
+  font-size: 1.2rem;
+  display: inline;
+  line-height: 40px;
+  text-align: center;
+  padding-right: 10px;
+  font-weight: 100;
+}
+
+.weather-icon {
+  display: inline;
+  float: right;
+  font-size: 2.4rem;
+}
+
+.weather {
+  height: 50px;
+}
+
+.forecast {
+  height: auto;
+}
